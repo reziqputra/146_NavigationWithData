@@ -116,7 +116,15 @@ fun HalamanSatu(
                 ), verticalAlignment = Alignment.Bottom
             ) {
                 OutlinedButton(modifier = Modifier.weight(1f),onClick = onCancelButtonClicked) {
-                    Text(stringResource(R.string.next))
+                    Text(stringResource(R.string.cancel))
+                }
+                Button(
+                    modifier = Modifier.weight(1f),
+                    // the button is enabled when the user makes a selection
+                    enabled = textJmlBeli.isNotEmpty(),
+                    onClick = onNextButtonClicked
+                ) {
+                    Text(stringResource(id = R.string.next))
                 }
             }
         }

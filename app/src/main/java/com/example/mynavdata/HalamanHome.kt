@@ -20,8 +20,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.mynavdata.ui.theme.myNavDataTheme
 
 @Composable
 fun HalamanHome(
@@ -55,27 +57,36 @@ fun HalamanHome(
                     modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
                 Text(
-                    text = "himamay",
+                    text = "Reziq",
                     color = Color.DarkGray,
                     fontSize = 60.sp,
                     modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(dimensionResource(R.dimen.padding_medium))
-                        .weight(1f, false),
-                    horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
-                    verticalAlignment = Alignment.Bottom
-                ) {
-                    Button(
-                        modifier = Modifier.weight(1f),
-                        onClick = onNextButtonClicked)
-                    {
-                        Text(stringResource(R.string.next))
-                    }
-                }
             }
         }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(dimensionResource(R.dimen.padding_medium))
+                .weight(1f, false),
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+            verticalAlignment = Alignment.Bottom
+        ) {
+            Button(
+                modifier = Modifier.weight(1f),
+                onClick = onNextButtonClicked
+            )
+            {
+                Text(stringResource(R.string.next))
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewHalamanHome(){
+    myNavDataTheme{
+        HalamanHome(onNextButtonClicked = {})
     }
 }
