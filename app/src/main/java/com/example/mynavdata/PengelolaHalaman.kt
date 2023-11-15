@@ -28,7 +28,8 @@ import com.example.mynavdata.data.SumberData.flavors
 enum class PengelolaHalaman {
     Home,
     Rasa,
-    Summary
+    Summary,
+    Contact
 }
 
 @Composable
@@ -95,6 +96,7 @@ fun EsJumboApp(
             composable(route = PengelolaHalaman.Summary.name){
                 HalamanDua(orderUIState = uiState, onCancelButtonClicked = { cancelOrderAndNavigateToRasa(navController)  })
             }
+
         }
     }
 }
