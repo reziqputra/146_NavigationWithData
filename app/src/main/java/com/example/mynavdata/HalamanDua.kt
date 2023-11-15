@@ -43,6 +43,15 @@ fun HalamanDua(
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
         ) {
+            item.forEach { item ->
+                Column {
+                    Text(item.first, fontWeight = FontWeight.Bold)
+                    Text(text = item.second)
+                }
+                Divider(
+                    thickness = dimensionResource(id = R.dimen.thickness_divider)
+                )
+            }
             items.forEach { item ->
                 Column {
                     Text(item.first.uppercase())
