@@ -50,19 +50,19 @@ fun HalamanForm(
         )
 
         OutlinedTextField(
-            value = alamatTxt,
-            onValueChange = {
-                alamatTxt = it
-            },
-            label = { Text(text = stringResource(id = R.string.alamat)) }
-        )
-
-        OutlinedTextField(
             value = tlpnTxt,
             onValueChange = {
                 tlpnTxt = it
             },
             label = { Text(text = stringResource(id = R.string.telepon)) }
+        )
+
+        OutlinedTextField(
+            value = alamatTxt,
+            onValueChange = {
+                alamatTxt = it
+            },
+            label = { Text(text = stringResource(id = R.string.alamat)) }
         )
 
         Spacer(modifier = Modifier.height(15.dp))
